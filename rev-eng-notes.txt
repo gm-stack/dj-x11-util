@@ -87,14 +87,19 @@ change step																	|name from here on?
 			01 86489A00 0110 14000000 020508671C003E00000A000000000000000000000074006500730074004100420043004400450046004700480049004A004B004C00
 			01 86489A00 0110 1E000000 020508671C003E00000A000000000000000000000074006500730074004100420043004400450046004700480049004A004B004C00
 			
-			v always seems to be 01                                          v still not sure what that is - maybe voice inversion frequency?
+			v first byte								                     v still not sure what that is - maybe voice inversion frequency?
 			01 F0490200 00 0C    00000000 00 03 09         00   1C003E 00 000A0000000000000000000000 74006500730074004100420043004400450046004700480049004A004B004C00
                ^freq      ^step              ^TSQ mode     ^DCS        ^skip                         ^name, UTF-16
                        ^modulation            ^TSQ freq
                                  ^shift freq
                                 		  ^ shift
+            B  L		B  B     L        B  B  B          B    
+            01 F0490200 00 0C    00000000 00 03 09         00   1C003E 00 000A0000000000000000000000 74006500730074004100420043004400450046004700480049004A004B004C00
+            02 C0960B07 01 00    00000000 00 00 09         00   1C003E 00 000A0000000000000000000000 41007000700072006F0061006300680020004500610073007400000000000000
 
 
+first byte:
+not sure here - 02 in some slots, but 32 bits is enough to store "118200000"...
 
 freq:
 	no idea how it's stored yet. Close values seem close.
